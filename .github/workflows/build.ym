@@ -1,11 +1,14 @@
 name: Neverlend iOS Build
 
-on: [push, workflow_dispatch]
+on:
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check files
-        run: find . -maxdepth 4 -type f
+      - name: Build check
+        run: |
+          echo "Neverlend build started"
+          find . -maxdepth 4 -type f
